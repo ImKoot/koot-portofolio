@@ -1,0 +1,195 @@
+:root {
+  --bg: #17151b;
+  --bg-soft: #1e1b23;
+  --text: #ede8e0;
+  --text-dim: #9b93a3;
+  --line: rgba(237, 232, 224, 0.09);
+  --sage: #93a882;
+  --clay: #c98f6a;
+  --sans: "Manrope", -apple-system, sans-serif;
+  --serif: "Fraunces", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--text-dim);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+a:hover { color: var(--clay); border-color: var(--clay); }
+a:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+/* Nav */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 8vw 0;
+}
+.nav-name {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.3rem;
+}
+.nav-links a {
+  margin-left: 28px;
+  border-bottom: none;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+.nav-links a:hover { color: var(--clay); }
+
+/* Hero */
+.hero {
+  padding: 130px 8vw 100px;
+  max-width: 720px;
+}
+.hero-greeting {
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  margin: 0 0 4px;
+}
+.hero-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(3.4rem, 9vw, 6rem);
+  margin: 0 0 24px;
+  line-height: 1;
+}
+.hero-title .dot { color: var(--clay); }
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--text-dim);
+  max-width: 46ch;
+  margin: 0 0 40px;
+}
+.hero-cta {
+  border-bottom: none;
+  font-size: 0.95rem;
+  color: var(--sage);
+}
+.hero-cta:hover { color: var(--clay); }
+
+/* Feature (FloriaSMP) */
+.feature { padding: 0 8vw 100px; }
+.feature-card {
+  background: var(--bg-soft);
+  border-radius: 20px;
+  padding: 48px;
+  max-width: 640px;
+}
+.feature-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--sage);
+  background: rgba(147, 168, 130, 0.12);
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+}
+.feature-card h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 2.4rem;
+  margin: 0 0 6px;
+}
+.feature-meta {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin: 0 0 20px;
+}
+.feature-desc {
+  color: var(--text-dim);
+  max-width: 52ch;
+  margin: 0 0 26px;
+}
+.feature-link { border-bottom: none; color: var(--clay); font-size: 0.95rem; }
+
+/* Section label */
+.section-label {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  padding: 0 8vw;
+  margin: 0 0 36px;
+}
+
+/* Work / roles */
+.work { padding: 40px 0 90px; border-top: 1px solid var(--line); }
+.role-group { padding: 0 8vw; margin-bottom: 48px; }
+.role-group:last-child { margin-bottom: 0; }
+.role-group-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin: 0 0 20px;
+  color: var(--text-dim);
+}
+.role {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+.role-main { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.role-main h4 { margin: 0; font-size: 1.05rem; font-weight: 600; }
+.role-org { color: var(--text-dim); font-size: 0.92rem; }
+.role-side {
+  display: flex;
+  gap: 20px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+/* About */
+.about { padding: 90px 8vw; border-top: 1px solid var(--line); }
+.about-text { max-width: 56ch; color: var(--text-dim); font-size: 1.05rem; }
+
+/* Contact */
+.contact { padding: 90px 8vw 120px; border-top: 1px solid var(--line); }
+.contact-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 2.6rem;
+  margin: 0 0 32px;
+}
+.contact-links { display: flex; gap: 30px; font-size: 0.98rem; }
+
+/* Footer */
+.site-footer {
+  padding: 26px 8vw 40px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  border-top: 1px solid var(--line);
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  .nav { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .nav-links a { margin-left: 0; margin-right: 20px; }
+  .feature-card { padding: 32px; border-radius: 16px; }
+  .role { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .role-side { gap: 16px; }
+}
